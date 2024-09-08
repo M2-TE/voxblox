@@ -63,7 +63,7 @@ FetchContent_Declare(kindr GIT_REPOSITORY "https://github.com/ethz-asl/minkindr.
 FetchContent_MakeAvailable(kindr)
 FetchContent_Declare(glog GIT_REPOSITORY "https://github.com/google/glog.git" GIT_TAG "v0.6.0" GIT_SHALLOW ON)
 FetchContent_MakeAvailable(glog)
-add_library(${PROJECT_NAME} ${${PROJECT_NAME}_SRCS} ${PROTO_SRCS})
+add_library(${PROJECT_NAME} STATIC ${${PROJECT_NAME}_SRCS} ${PROTO_SRCS})
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 target_include_directories(${PROJECT_NAME} PUBLIC "${kindr_SOURCE_DIR}/minkindr/include")
 list(GET PROTO_HDRS 0 PROTO_HDR)
