@@ -68,5 +68,5 @@ target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/i
 target_include_directories(${PROJECT_NAME} PUBLIC "${kindr_SOURCE_DIR}/minkindr/include")
 list(GET PROTO_HDRS 0 PROTO_HDR)
 get_filename_component(PROTOH_DIR ${PROTO_HDR} DIRECTORY)
-target_include_directories(${PROJECT_NAME} PRIVATE "${PROTOH_DIR}")
+target_include_directories(${PROJECT_NAME} PUBLIC "${PROTOH_DIR}")
 target_link_libraries(${PROJECT_NAME} PUBLIC glog::glog Eigen3::Eigen)
