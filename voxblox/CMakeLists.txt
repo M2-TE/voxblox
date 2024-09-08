@@ -65,7 +65,7 @@ FetchContent_Declare(glog GIT_REPOSITORY "https://github.com/google/glog.git" GI
 FetchContent_MakeAvailable(glog)
 add_library(${PROJECT_NAME} ${${PROJECT_NAME}_SRCS} ${PROTO_SRCS})
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
-target_include_directories(${PROJECT_NAME} PRIVATE "${kindr_SOURCE_DIR}/minkindr/include")
+target_include_directories(${PROJECT_NAME} PUBLIC "${kindr_SOURCE_DIR}/minkindr/include")
 list(GET PROTO_HDRS 0 PROTO_HDR)
 get_filename_component(PROTOH_DIR ${PROTO_HDR} DIRECTORY)
 target_include_directories(${PROJECT_NAME} PRIVATE "${PROTOH_DIR}")
